@@ -1,0 +1,45 @@
+---
+title: "Polinomial Vs. SVR"
+author: "Isaac Ulises Ascencio Padilla"
+date: "2024-02-17"
+output: html_document
+---
+
+''' {r, include = FALSE}
+source("Reg_poli.R.R")
+'''' 
+
+# Comparación de modelos
+''' {r,  echo = FALSE}
+plt.grid
+'''' 
+
+# Modelo seleccionado  
+''' {r,  echo = FALSE}
+smld
+'''' 
+
+# Cómo obtuviste el modelo final<br>
+En el código se explora cómo el grado del polinomio afecta la capacidad de los modelos
+para ajustarse y predecir la variable, yo escogí el de grado 3 ya que un ajuste alto
+puede llevar a un sobreajuste y considero que ese modelo se ajusta bien a los datos
+tomando en cuenta el coeficiente de determinación R^2.
+
+# Porqué resultó un modelo de ese grado<br>
+Porque un modelo de grado 3 puede representar una buena compensación entre el sesgo y
+la varianza de los datos y porque la complejedad del modelo es relativamente simple.
+
+
+# La ecuación resultante (utiliza el ^ para las potencias)<br>
+Profit = B0 + B1 * R.D.Spend + B2 * R.D.Spend^2 + B3 * R.D.Spend^3 
+
+
+# SVR
+''' {r,  echo = FALSE}
+plt.svr
+'''' 
+
+# Conclusiones personales. 
+Yo considero que la regresión polinomial se ajustó mejor a los datos considerando las métricas
+de evaluación y con la comparación de las gráficas, ya que representa mejor la alineación entre 
+los valores observados y predichos.
