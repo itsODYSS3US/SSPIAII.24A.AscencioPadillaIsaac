@@ -5,7 +5,7 @@
 # if(!require(libs))
 # {install.packages(libs, dependencies = T)}
 
-list.of.packages <- c("ggplot2","caTools","mltools","data.table","cowplot")
+list.of.packages <- c("ggplot2","caTools","mltools","data.table","cowplot","caret")
 
 new.packages <- 
   list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
