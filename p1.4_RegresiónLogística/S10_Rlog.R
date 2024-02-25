@@ -83,6 +83,7 @@ points(grid.set, pch =".", col = ifelse(Y.grid == 1, "darkblue", "darkred"))
 points(set, pch = 21, bg = ifelse(set[,3] == 1, "darkblue", "darkred"))
 
 
+
 #Evaluación del modelo
 #Check imbalanced
 
