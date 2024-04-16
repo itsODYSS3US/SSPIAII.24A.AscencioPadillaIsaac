@@ -1,5 +1,3 @@
-# p2.2.ANN.Keras
-
 # Isaac Ulises Ascencio Padilla
 
 import tensorflow as tf
@@ -26,7 +24,7 @@ one = ColumnTransformer(
     remainder='passthrough'
     )
 
-x = one.fit_transform(X)
+X = one.fit_transform(X)
 X = X[:,1:]
 
 # Escalado
@@ -49,19 +47,25 @@ ann.add(
 
 # Capas ocultas
 ann.add(
-    Dense(units = 6, kernel_initializer='uniform', activation="sigmoid")
+    Dense(units = 2, activation="tanh", kernel_initializer='uniform')
+)
+
+ann.add(
+    Dense(units = 2, activation="tanh", kernel_initializer='uniform')
 )
 
 # Capa de salida
 ann.add(
-    Dense(units = 1, activation='sigmoid', kernel_initializer = "uniform")
+    Dense(units = 1, activation='sigtmoid', kernel_initializer = "uniform")
 )
 
 
 # Entrenador
 ann.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics=['accuracy'])
 
-ann.fit(X_train, Y_train, epochs = 50)
+print(X_train.shape)
+
+ann.fit(X_train, Y_train, epochs = 50, batch_size= 50)
 
 
 # Guardar el modelo
@@ -78,4 +82,4 @@ Y_pred = (Y_pred > 0.5)
 # Visualizar la arquitectura de la red neuronal
 from keras.utils import plot_model
 
-plot_model(modelo,to_file='model.png',show_shapes=True,show_layer_activations=True,show_layer_names=True)
+plot_model(modelo,to_file='model.png',show_shapes=True,show_layer_activations=True,show_layer_names=True) 
